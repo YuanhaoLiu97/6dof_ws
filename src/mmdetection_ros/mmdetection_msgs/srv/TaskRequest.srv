@@ -1,0 +1,7 @@
+# TaskRequest
+bool enable
+string label
+float32 score
+int8 count
+---
+bool success

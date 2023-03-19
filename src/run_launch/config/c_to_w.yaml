@@ -1,0 +1,6 @@
+#namespace:node
+sixdof_tf2:
+  ros__parameters:
+    #[x,y,z,w]
+    quat: [0.020279, -0.848777, 0.528165, 0.014425]
+    tran: [0.397433, 0.835115, 0.503117]

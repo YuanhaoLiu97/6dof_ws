@@ -1,0 +1,23 @@
+#namespace:node
+#sixdof_tf2:
+#  ros__parameters:
+    #[x,y,z,w]
+#    quat: [0.020279, -0.848777, 0.528165, 0.014425]
+#    tran: [0.397433, 0.835115, 0.503117]
+detect3d_synchronizer:
+  ros__parameters:
+      normal_estimate_radius_search: 0.002
+      voxel_leaf_size: 0.002
+      sor_meank: 400
+      sor_stddev_multhresh: 0.3
+      match_min_score: 0.35
+      gr_align_sample_size: 200
+      gr_max_normal_difference: 90
+      gr_max_color_distance: 90
+      gr_max_time_seconds: 3
+      gr_delta: 0.01
+      gr_overlap: 0.7
+      icp_max_correspondence_distance: 0.01
+      icp_maximum_iterations: 50
+      icp_transformation_epsilon: 1e-8
+      icp_euclidean_fitness_epsilon: 0.001
