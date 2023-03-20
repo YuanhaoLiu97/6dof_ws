@@ -16,6 +16,7 @@ def pcRegistration(pc_sub, detections_sub, logger):
     
     # point cloud to np.array
     pc_np_source = np.array(list(read_points(pc_sub)))[:,0:3]
+    print(pc_np_source.shape)
     # read detection result
     # mask
     for detection in detections_msg.detections:
@@ -26,8 +27,8 @@ def pcRegistration(pc_sub, detections_sub, logger):
                                 detection.mask.width)
             mask = mask.astype(bool)
         
-        # todo: pcsegmentation
-        pc_np_seg_source = pcsegmentation(pc_np_source, mask)
+            # todo: pcsegmentation
+            pc_np_seg_source = pcsegmentation(pc_np_source, mask)
         
         voxel_size = 0.05  # means 5cm for this dataset
         # read from Demo as an example
@@ -88,3 +89,9 @@ def rotation_matrix_to_quaternion(R):
     z = (m12 - m21) / (4 * w)
     q_norm = sqrt(w*w + x*x + y*y + z*z)
     return np.array([w, x, y, z]) / q_norm
+
+
+def pcsegmentation(pc_np_source, mask):
+    h,w = mask.shape
+    pc_np_seg_source = pc_np_source.reshape((h,w,-1))[mask]
+    return pc_np_seg_source

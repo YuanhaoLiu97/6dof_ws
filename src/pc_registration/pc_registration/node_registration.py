@@ -7,6 +7,8 @@ from std_msgs.msg import String
 from sensor_msgs.msg import PointCloud2, Image
 from geometry_msgs.msg import Transform
 from my_interfaces.msg import RegistrationHomos
+from mmdetection_msgs.msg import Detections
+
 
 import message_filters
 
